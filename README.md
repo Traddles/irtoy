@@ -16,3 +16,5 @@ serialDevice = serial.Serial('/dev/ttyACM0')
 
 toy = IrToy(serialDevice)
 
+## test irtoy
+https://github.com/crleblanc/PyIrToy/blob/master/tests/test_irtoy.py
