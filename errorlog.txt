@@ -1,0 +1,230 @@
+In [27]: toy.transmit([0,24,0,25,0,24,0,74,0,24,0,26,0,23,0,74,0,24,0,26,0,24,0,74,0,24,0,74,0,24,0,26,0,23,0,74,0,24,0,25,0,24,0,74,0,24,0,25,0,24,0,74,0,24,0,25,0,24,0,26,0,24,0,25,0,24,0,25,0,24,0,25,0,24,0,74,0,24,0,26,0,23,0,25,0,24,0,25,0,24,0,75,0,24,0,74,0,24,0,74,0,24,0,74,0,24,0,25,0,24,0,74,0,24,0,74,0,24,0,74,0,24,4,230,1,141,0,199,0,24,0,25,0,24,0,74,0,24,0,26,0,23,0,75,0,24,0,25,0,24,0,74,0,24,0,25,0,24,0,74,0,24,0,75,0,23,0,26,0,23,0,75,0,23,0,26,0,23,0,74,0,24,0,26,0,23,0,74,0,24,0,26,0,23,0,26,0,24,0,26,0,23,0,26,0,23,0,26,0,23,0,75,0,23,0,25,0,24,0,25,0,24,0,26,0,23,0,75,0,23,0,74,0,24,0,74,0,24,0,75,0,24,0,26,0,23,0,74,0,25,0,74,0,25,0,74,0,25,21,213,1,141,0,199,0,25,0,25,0,24,0,74,0,25,0,26,0,23,0,74,0,24,0,26,0,23,0,74,0,24,0,25,0,24,0,74,0,24,0,74,0,24,0,25,0,24,0,75,0,24,0,26,0,23,0,76,0,22,0,27,0,22,0,76,0,23,0,27,0,22,0,26,0,23,0,27,0,22,0,27,0,22,0,27,0,22,0,76,0,23,0,27,0,23,0,26,0,23,0,27,0,22,0,76,0,23,0,75,0,23,0,76,0,23,0,76,0,23,0,27,0,23,0,75,0,24,0,75,0,24,0,75,0,24,4,230,1,142,0,199,0,24,0,25,0,24,0,74,0,24,0,26,0,23,0,74,0,24,0,25,0,24,0,75,0,24,0,26,0,23,0,74,0,24,0,74,0,24,0,25,0,24,0,74,0,24,0,25,0,24,0,74,0,24,0,25,0,24,0,74,0,24,0,25,0,24,0,26,0,23,0,26,0,23,0,26,0,23,0,25,0,24,0,75,0,23,0,26,0,23,0,26,0,23,0,26,0,23,0,76,0,23,0,76,0,23,0,76,0,23,0,76,0,23,0,26,0,23,0,76,0,23,0,76,0,23,0,76,0,23,4,233,1,141,0,199,0,25,0,24,0,25,0,74,0,24,0,24,0,25,0,74,0,24,0,26,0,24,0,74,0,24,0,25,0,24,0,74,0,24,0,74,0,24,0,25,0,24,0,74,0,24,0,26,0,23,0,74,0,24,0,25,0,24,0,75,0,23,0,25,0,24,0,25,0,24,0,25,0,24,0,26,0,24,0,26,0,24,0,74,0,26,0,24,0,26,0,24,0,26,0,25,0,25,0,73,0,26,0,73,0,26,0,73,0,26,0,73,0,25,0,25,0,24,0,75,0,24,0,74,0,24,0,74,0,24,4,232,1,139,0,200,0,24,0,26,0,23,0,74,0,24,0,26,0,23,0,74,0,24,0,26,0,23,0,75,0,23,0,25,0,24,0,75,0,23,0,74,0,24,0,26,0,23,0,74,0,24,0,26,0,23,0,74,0,24,0,26,0,23,0,75,0,23,0,26,0,23,0,25,0,24,0,26,0,23,0,25,0,24,0,25,0,24,0,75,0,24,0,25,0,24,0,25,0,24,0,26,0,23,0,74,0,24,0,75,0,24,0,74,0,24,0,74,0,24,0,25,0,24,0,74,0,24,0,74,0,24,0,75,0,23,255,255])
+KeyboardInterrupt
+
+In [27]: ser
+serial        serialDevice  
+
+In [27]: serialDevice.re
+serialDevice.read       serialDevice.readall    serialDevice.readline   
+serialDevice.readable   serialDevice.readinto   serialDevice.readlines  
+
+In [27]: serialDevice.read(3)
+
+^C---------------------------------------------------------------------------
+KeyboardInterrupt                         Traceback (most recent call last)
+<ipython-input-27-12a9e7ced499> in <module>()
+----> 1 serialDevice.read(3)
+
+/usr/lib/python2.7/dist-packages/serial/serialposix.pyc in read(self, size)
+    444         read = bytearray()
+    445         while len(read) < size:
+--> 446             ready,_,_ = select.select([self.fd],[],[], self._timeout)
+    447             # If select was used with a timeout, and the timeout occurs, it
+    448             # returns with empty lists -> thus abort read operation.
+
+KeyboardInterrupt: 
+
+In [28]: toy.re
+toy.receive          toy.requiredVersion  toy.reset            
+
+In [28]: toy.reset()
+
+In [29]: toy.transmit([50] * 70)
+---------------------------------------------------------------------------
+SerialException                           Traceback (most recent call last)
+<ipython-input-29-284a921ebe16> in <module>()
+----> 1 toy.transmit([50] * 70)
+
+/home/pahi/dev/python/ir-toy/pyirtoy-0.2.6/irtoy.pyc in transmit(self, code)
+    185             # surprisingly common on a weak CPU like the raspberry pi
+    186             #self.toy.flushOutput() # hmm, maybe this will help? Interesting: we get a crazy state until a new program is started, then fine.
+--> 187             self.reset()
+    188             self._setSamplingMode()
+    189             raise
+
+/home/pahi/dev/python/ir-toy/pyirtoy-0.2.6/irtoy.pyc in reset(self)
+    153 
+    154         self._sleep()
+--> 155         self._writeList([0x00]*5)
+    156         self.transmitMode = False
+    157         self._sleep()
+
+/home/pahi/dev/python/ir-toy/pyirtoy-0.2.6/irtoy.pyc in _writeList(self, code, check_handshake)
+     93         maxWriteSize = 32
+     94         for idx in range(0, len(code), maxWriteSize):
+---> 95             segmentWritten = self.toy.write(byteCode[idx:idx+maxWriteSize])
+     96             bytesWritten += segmentWritten
+     97 
+
+/usr/lib/python2.7/dist-packages/serial/serialposix.pyc in write(self, data)
+    487             except OSError, v:
+    488                 if v.errno != errno.EAGAIN:
+--> 489                     raise SerialException('write failed: %s' % (v,))
+    490         return len(data)
+    491 
+
+SerialException: write failed: [Errno 5] Input/output error
+
+In [30]: toy.transmit([50] * 70)
+---------------------------------------------------------------------------
+SerialException                           Traceback (most recent call last)
+<ipython-input-30-284a921ebe16> in <module>()
+----> 1 toy.transmit([50] * 70)
+
+/home/pahi/dev/python/ir-toy/pyirtoy-0.2.6/irtoy.pyc in transmit(self, code)
+    185             # surprisingly common on a weak CPU like the raspberry pi
+    186             #self.toy.flushOutput() # hmm, maybe this will help? Interesting: we get a crazy state until a new program is started, then fine.
+--> 187             self.reset()
+    188             self._setSamplingMode()
+    189             raise
+
+/home/pahi/dev/python/ir-toy/pyirtoy-0.2.6/irtoy.pyc in reset(self)
+    153 
+    154         self._sleep()
+--> 155         self._writeList([0x00]*5)
+    156         self.transmitMode = False
+    157         self._sleep()
+
+/home/pahi/dev/python/ir-toy/pyirtoy-0.2.6/irtoy.pyc in _writeList(self, code, check_handshake)
+     93         maxWriteSize = 32
+     94         for idx in range(0, len(code), maxWriteSize):
+---> 95             segmentWritten = self.toy.write(byteCode[idx:idx+maxWriteSize])
+     96             bytesWritten += segmentWritten
+     97 
+
+/usr/lib/python2.7/dist-packages/serial/serialposix.pyc in write(self, data)
+    487             except OSError, v:
+    488                 if v.errno != errno.EAGAIN:
+--> 489                     raise SerialException('write failed: %s' % (v,))
+    490         return len(data)
+    491 
+
+SerialException: write failed: [Errno 5] Input/output error
+
+In [31]: toy = IrToy(serialDevice)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-31-f3884d99ee54> in <module>()
+----> 1 toy = IrToy(serialDevice)
+
+NameError: name 'IrToy' is not defined
+
+In [32]: toy = irIrToy(serialDevice)
+irtoy      irtoy.py   irtoy.pyc  
+
+In [32]: toy = irtoy.IrToy(serialDevice)
+---------------------------------------------------------------------------
+SerialException                           Traceback (most recent call last)
+<ipython-input-32-363add335174> in <module>()
+----> 1 toy = irtoy.IrToy(serialDevice)
+
+/home/pahi/dev/python/ir-toy/pyirtoy-0.2.6/irtoy.pyc in __init__(self, serialDevice)
+     44 
+     45         self.requiredVersion = 22
+---> 46         hardware, revision = self.firmware_revision()
+     47         if self.firmware_revision()[1] < self.requiredVersion:
+     48             raise FirmwareVersionError("pyirtoy will only work with firmware version %d or greater, current=%d"
+
+/home/pahi/dev/python/ir-toy/pyirtoy-0.2.6/irtoy.pyc in firmware_revision(self)
+     57     def firmware_revision(self):
+     58         '''Return the hardware and firmware revision returned as a tuple'''
+---> 59         self.reset()
+     60         self.toy.write(b'v')
+     61         self._sleep()
+
+/home/pahi/dev/python/ir-toy/pyirtoy-0.2.6/irtoy.pyc in reset(self)
+    153 
+    154         self._sleep()
+--> 155         self._writeList([0x00]*5)
+    156         self.transmitMode = False
+    157         self._sleep()
+
+/home/pahi/dev/python/ir-toy/pyirtoy-0.2.6/irtoy.pyc in _writeList(self, code, check_handshake)
+     93         maxWriteSize = 32
+     94         for idx in range(0, len(code), maxWriteSize):
+---> 95             segmentWritten = self.toy.write(byteCode[idx:idx+maxWriteSize])
+     96             bytesWritten += segmentWritten
+     97 
+
+/usr/lib/python2.7/dist-packages/serial/serialposix.pyc in write(self, data)
+    487             except OSError, v:
+    488                 if v.errno != errno.EAGAIN:
+--> 489                     raise SerialException('write failed: %s' % (v,))
+    490         return len(data)
+    491 
+
+SerialException: write failed: [Errno 5] Input/output error
+
+In [33]: 
+Do you really want to exit ([y]/n)? y
+pahi@pahi-6550b:~/dev/python/ir-toy/pyirtoy-0.2.6$ sudo ipython
+[sudo] password for pahi: 
+Python 2.7.6 (default, Mar 22 2014, 22:59:56) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.1.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import irtoy
+
+In [2]: import serial
+
+In [3]: irt
+irtoy      irtoy.py   irtoy.pyc  
+
+In [3]: toy = serial.S
+serial.SEVENBITS                serial.STOPBITS_ONE_POINT_FIVE  serial.SerialBase
+serial.SIXBITS                  serial.STOPBITS_TWO             serial.SerialException
+serial.STOPBITS_ONE             serial.Serial                   serial.SerialTimeoutException
+
+In [3]: toy = serial.Se
+serial.Serial                  serial.SerialException         
+serial.SerialBase              serial.SerialTimeoutException  
+
+In [3]: toy = serial.Serial('/dev/ttyACM0')
+---------------------------------------------------------------------------
+SerialException                           Traceback (most recent call last)
+<ipython-input-3-958747779f39> in <module>()
+----> 1 toy = serial.Serial('/dev/ttyACM0')
+
+/usr/lib/python2.7/dist-packages/serial/serialutil.pyc in __init__(self, port, baudrate, bytesize, parity, stopbits, timeout, xonxoff, rtscts, writeTimeout, dsrdtr, interCharTimeout)
+    259 
+    260         if port is not None:
+--> 261             self.open()
+    262 
+    263     def isOpen(self):
+
+/usr/lib/python2.7/dist-packages/serial/serialposix.pyc in open(self)
+    276         except Exception, msg:
+    277             self.fd = None
+--> 278             raise SerialException("could not open port %s: %s" % (self._port, msg))
+    279         #~ fcntl.fcntl(self.fd, FCNTL.F_SETFL, 0)  # set blocking
+    280 
+
+SerialException: could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
+In [4]: toy = serial.Serial('/dev/ttyACM0')
+---------------------------------------------------------------------------
+SerialException                           Traceback (most recent call last)
+<ipython-input-4-958747779f39> in <module>()
+----> 1 toy = serial.Serial('/dev/ttyACM0')
+
+/usr/lib/python2.7/dist-packages/serial/serialutil.pyc in __init__(self, port, baudrate, bytesize, parity, stopbits, timeout, xonxoff, rtscts, writeTimeout, dsrdtr, interCharTimeout)
+    259 
+    260         if port is not None:
+--> 261             self.open()
+    262 
+    263     def isOpen(self):
+
+/usr/lib/python2.7/dist-packages/serial/serialposix.pyc in open(self)
+    276         except Exception, msg:
+    277             self.fd = None
+--> 278             raise SerialException("could not open port %s: %s" % (self._port, msg))
+    279         #~ fcntl.fcntl(self.fd, FCNTL.F_SETFL, 0)  # set blocking
+    280 
+
+SerialException: could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+
