@@ -4,6 +4,10 @@ This is for the irpart of the DOME-project
 ## get right serial id (ubuntu)
 dmesg | grep tty
 
+## search serial id (mac)
+dmesg | grep ACM
+tail -f /var/log/system.log
+
 ## allow serial device access
 sudo chmod 777 /dev/ttyACM0
 
