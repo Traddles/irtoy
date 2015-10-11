@@ -23,3 +23,6 @@ toy = IrToy(serialDevice)
 
 ## test irtoy
 https://github.com/crleblanc/PyIrToy/blob/master/tests/test_irtoy.py
+
+## update irtoy fw
+[http://dangerousprototypes.com/docs/USB_IR_Toy_firmware_update](http://dangerousprototypes.com/docs/USB_IR_Toy_firmware_update)
