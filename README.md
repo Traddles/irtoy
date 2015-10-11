@@ -6,6 +6,7 @@ dmesg | grep tty
 
 ## search serial id (mac)
 dmesg | grep ACM
+
 tail -f /var/log/system.log
 
 ## allow serial device access
